@@ -1,0 +1,10 @@
+<h2>Quora Posts</h2>
+<a href="{% url 'post_create' %}">Create New Post</a>
+<a href="{% url 'logout' %}">Logout</a>
+<ul>
+    {% for post in posts %}
+        <li>
+            <a href="{% url 'post_detail' post.id %}">{{ post.question }}</a> by {{ post.user.username }}
+        </li>
+    {% endfor %}
+</ul>
